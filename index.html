@@ -351,6 +351,100 @@
             border-bottom: none;
         }
 
+        /* Call in Progress Mockup */
+        .call-mockup {
+            background: linear-gradient(145deg, #3d5a4d 0%, #2d4a3d 100%);
+            border-radius: 24px;
+            padding: 48px 40px;
+            width: 280px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+
+        .call-avatar {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .call-avatar img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255,255,255,0.3);
+        }
+
+        .call-rings {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            animation: pulse 2s ease-out infinite;
+        }
+
+        .ring1 {
+            width: 130px;
+            height: 130px;
+        }
+
+        .ring2 {
+            width: 160px;
+            height: 160px;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0; }
+        }
+
+        .call-name {
+            color: white;
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .call-timer {
+            color: rgba(255,255,255,0.7);
+            font-size: 18px;
+            margin-bottom: 32px;
+            font-family: monospace;
+        }
+
+        .call-controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .call-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .call-btn.end {
+            background: #e74c3c;
+            transform: rotate(135deg);
+        }
+
         .feature-card img {
             width: 60px;
             height: 60px;
@@ -813,6 +907,26 @@
                                 <p>Hospice Chaplain, Boston</p>
                                 <p class="clarity-price">$1/min</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Screen 3: Call in Progress -->
+                <div class="anim-screen screen-call">
+                    <div class="call-mockup">
+                        <div class="call-avatar">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&h=120&fit=crop" alt="">
+                            <div class="call-rings">
+                                <span class="ring ring1"></span>
+                                <span class="ring ring2"></span>
+                            </div>
+                        </div>
+                        <h3 class="call-name">Sarah Chen</h3>
+                        <p class="call-timer">03:42</p>
+                        <div class="call-controls">
+                            <div class="call-btn mute">🎤</div>
+                            <div class="call-btn speaker">🔊</div>
+                            <div class="call-btn end">📞</div>
                         </div>
                     </div>
                 </div>
