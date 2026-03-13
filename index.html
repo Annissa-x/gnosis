@@ -82,27 +82,46 @@
         .hero {
             background: #faf8f5;
             padding: 24px;
-            min-height: calc(100vh - 72px);
+            height: calc(100vh - 72px);
             display: flex;
-            align-items: center;
+            align-items: stretch;
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 1.4fr;
-            gap: 20px;
-            max-width: 1100px;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+            max-width: 1400px;
             margin: 0 auto;
             width: 100%;
+            height: 100%;
         }
 
-        .hero-left {
-            background: #c8e6c9;
+        .hero-box {
             border-radius: 20px;
-            padding: 40px;
+            padding: 36px;
             display: flex;
             flex-direction: column;
+            height: 100%;
+        }
+
+        .hero-box-1 {
+            background: #c8e6c9;
             justify-content: space-between;
+        }
+
+        .hero-box-2 {
+            background: #cfd8dc;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-box-3 {
+            background: #e8e0d5;
+            justify-content: center;
+            align-items: center;
+            position: relative;
         }
 
         .hero-content {
@@ -110,7 +129,7 @@
         }
 
         .hero h1 {
-            font-size: 52px;
+            font-size: 44px;
             font-weight: 400;
             line-height: 1.2;
             color: #1a1a1a;
@@ -119,7 +138,7 @@
         }
 
         .hero p {
-            font-size: 18px;
+            font-size: 17px;
             color: #444;
             line-height: 1.7;
             margin-bottom: 28px;
@@ -131,13 +150,13 @@
             justify-content: space-between;
             background: #2d4a3d;
             color: white;
-            padding: 24px 34px;
+            padding: 22px 30px;
             border-radius: 16px;
-            font-size: 19px;
+            font-size: 17px;
             font-weight: 500;
             text-decoration: none;
             width: 100%;
-            max-width: 240px;
+            max-width: 260px;
             transition: all 0.2s;
         }
 
@@ -150,51 +169,123 @@
             font-size: 20px;
         }
 
-        .hero-right {
-            background: #cfd8dc;
-            border-radius: 20px;
-            padding: 24px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+        /* Feature cards in boxes */
+        .feature-stack {
+            display: flex;
+            flex-direction: column;
             gap: 12px;
-            align-content: center;
+            width: 100%;
+            max-width: 280px;
         }
 
-        .preview-card {
+        .feature-card {
             background: white;
-            border-radius: 12px;
-            padding: 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border-radius: 14px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px dashed #b0bec5;
         }
 
-        .preview-card img {
-            width: 50px;
-            height: 50px;
+        .feature-card img {
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             object-fit: cover;
         }
 
-        .preview-card h4 {
-            font-size: 15px;
+        .feature-card h4 {
+            font-size: 16px;
             font-weight: 600;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
+            color: #1a1a1a;
         }
 
-        .preview-card p {
-            font-size: 11px;
+        .feature-card .role {
+            font-size: 12px;
             color: #666;
-            margin: 0;
+            margin-bottom: 8px;
         }
 
-        .preview-card .tag {
+        .feature-card .detail {
+            font-size: 13px;
+            color: #888;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .feature-card .tag {
             display: inline-block;
             background: #e8f5e9;
             color: #2d4a3d;
-            font-size: 10px;
-            padding: 3px 8px;
-            border-radius: 10px;
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 12px;
             margin-top: 10px;
+        }
+
+        .box-label {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Stats card */
+        .stats-card {
+            background: white;
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            width: 100%;
+            max-width: 280px;
+            border: 1px dashed #d4c4b0;
+        }
+
+        .stats-card h4 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #2d4a3d;
+            margin-bottom: 4px;
+        }
+
+        .stats-card .trend {
+            color: #4caf50;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .stats-card .chart {
+            height: 60px;
+            margin: 16px 0;
+            background: linear-gradient(90deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-card .chart::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Cpath d='M0,50 Q30,45 50,35 T100,25 T150,30 T200,15' fill='none' stroke='%232d4a3d' stroke-width='2'/%3E%3C/svg%3E") no-repeat center;
+            background-size: cover;
+        }
+
+        .stats-card .label {
+            font-size: 12px;
+            color: #888;
         }
 
         /* Social Proof */
@@ -383,12 +474,28 @@
         }
 
         /* Responsive */
-        @media (max-width: 900px) {
+        @media (max-width: 1100px) {
+            .hero-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .hero-box-3 {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                min-height: calc(100vh - 72px);
+            }
             .hero-grid {
                 grid-template-columns: 1fr;
             }
-            .hero-right {
+            .hero-box-2, .hero-box-3 {
                 display: none;
+            }
+            .hero-box {
+                min-height: 400px;
             }
             .hero h1 {
                 font-size: 32px;
@@ -423,53 +530,54 @@
 
     <section class="hero">
         <div class="hero-grid">
-            <div class="hero-left">
+            <!-- Box 1: Main CTA -->
+            <div class="hero-box hero-box-1">
                 <div class="hero-content">
                     <h1>Therapy helps, but it doesn't help everyone.</h1>
                     <p>Millions live disconnected and without a sense of home. The scientific world gives us tools for innovation, but it cannot tell us how to live.</p>
                 </div>
                 <a href="#guides" class="hero-cta">
-                    Find Your Practitioner
+                    Find Your Guide
                     <span>→</span>
                 </a>
             </div>
-            <div class="hero-right">
-                <div class="preview-card">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop" alt="">
-                    <h4>Sarah Chen</h4>
-                    <p>Hospice Chaplain</p>
-                    <span class="tag">Grief & Loss</span>
+
+            <!-- Box 2: Browse Guides -->
+            <div class="hero-box hero-box-2">
+                <div class="feature-stack">
+                    <div class="feature-card">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop" alt="">
+                        <h4>Sarah Chen</h4>
+                        <p class="role">Hospice Chaplain · Boston</p>
+                        <p class="detail">⭐ 4.9 · 142 sessions</p>
+                        <span class="tag">Grief & Loss</span>
+                    </div>
+                    <div class="feature-card">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="">
+                        <h4>Marcus Webb</h4>
+                        <p class="role">Philosopher · New York</p>
+                        <p class="detail">⭐ 5.0 · 89 sessions</p>
+                        <span class="tag">Life Decisions</span>
+                    </div>
                 </div>
-                <div class="preview-card">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="">
-                    <h4>Marcus Webb</h4>
-                    <p>Philosopher</p>
-                    <span class="tag">Life Decisions</span>
+                <span class="box-label">Browse</span>
+            </div>
+
+            <!-- Box 3: Impact -->
+            <div class="hero-box hero-box-3">
+                <div class="stats-card">
+                    <h4>2,847</h4>
+                    <span class="trend">↑ 12%</span>
+                    <div class="chart"></div>
+                    <p class="label">Lives touched this month</p>
                 </div>
-                <div class="preview-card">
-                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop" alt="">
-                    <h4>Elena Vasquez</h4>
-                    <p>Stoicism Teacher</p>
-                    <span class="tag">Anxiety</span>
+                <div class="feature-stack" style="margin-top: 16px;">
+                    <div class="feature-card" style="border-color: #d4c4b0;">
+                        <p class="detail" style="margin: 0;">💬 "Finally found someone who gets it."</p>
+                        <p class="role" style="margin-top: 8px; margin-bottom: 0;">— Anonymous, grief counseling</p>
+                    </div>
                 </div>
-                <div class="preview-card">
-                    <img src="https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=100&h=100&fit=crop" alt="">
-                    <h4>James Okafor</h4>
-                    <p>Interfaith Minister</p>
-                    <span class="tag">Spirituality</span>
-                </div>
-                <div class="preview-card">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="">
-                    <h4>David Kim</h4>
-                    <p>Pastor</p>
-                    <span class="tag">Faith & Doubt</span>
-                </div>
-                <div class="preview-card">
-                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop" alt="">
-                    <h4>Tara Mitchell</h4>
-                    <p>Meditation Teacher</p>
-                    <span class="tag">Acceptance</span>
-                </div>
+                <span class="box-label">Impact</span>
             </div>
         </div>
     </section>
