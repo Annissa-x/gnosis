@@ -202,107 +202,153 @@
             margin-top: 20px;
         }
 
-        /* Booking Mockup */
-        .booking-mockup {
+        /* Clarity-style Booking Mockup */
+        .clarity-mockup {
             background: white;
-            border-radius: 16px;
-            padding: 28px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border: 1px dashed #b0bec5;
-            width: 320px;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+            width: 480px;
+            overflow: hidden;
             position: relative;
         }
 
-        .booking-header {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 20px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid #eee;
+        .clarity-header {
+            background: #2d4a3d;
+            color: white;
+            padding: 14px 20px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
         }
 
-        .booking-header img {
+        .clarity-content {
+            display: flex;
+            padding: 24px;
+            gap: 24px;
+        }
+
+        .clarity-left {
+            flex: 1;
+        }
+
+        .clarity-right {
+            width: 120px;
+            text-align: center;
+        }
+
+        .clarity-right img {
             width: 60px;
             height: 60px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #e8f5e9;
+            margin-bottom: 8px;
         }
 
-        .booking-header h4 {
-            font-size: 18px;
+        .clarity-right h4 {
+            font-size: 14px;
             font-weight: 600;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
 
-        .booking-header p {
-            font-size: 13px;
+        .clarity-right p {
+            font-size: 11px;
             color: #666;
             margin: 0;
         }
 
-        .booking-header .price {
+        .clarity-price {
             color: #2d4a3d;
             font-weight: 600;
             margin-top: 4px;
         }
 
-        .booking-field {
+        .clarity-step {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             margin-bottom: 14px;
         }
 
-        .field-label {
-            font-size: 11px;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            display: block;
-            margin-bottom: 6px;
+        .step-num {
+            background: #e8f5e9;
+            color: #2d4a3d;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
         }
 
-        .field-input {
-            background: #f8f8f8;
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            padding: 12px 14px;
+        .step-title {
             font-size: 14px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .clarity-form {
+            margin-bottom: 16px;
+        }
+
+        .form-row {
+            display: flex;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .form-label {
+            background: #fafafa;
+            padding: 10px 12px;
+            font-size: 11px;
+            font-weight: 500;
+            color: #333;
+            width: 100px;
+            flex-shrink: 0;
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .form-link {
+            color: #2d4a3d;
+            font-weight: 400;
+        }
+
+        .form-textarea {
+            flex: 1;
+            padding: 10px 12px;
+            font-size: 12px;
             color: #999;
+        }
+
+        .form-select {
+            flex: 1;
+            padding: 10px 12px;
+            font-size: 12px;
+            color: #333;
             display: flex;
             justify-content: space-between;
-            align-items: center;
         }
 
-        .field-input .chevron {
-            color: #ccc;
+        .clarity-times {
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            overflow: hidden;
         }
 
-        .booking-times {
-            margin-top: 16px;
-        }
-
-        .times-label {
-            font-size: 11px;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 10px;
-        }
-
-        .time-slot {
-            background: #f8f8f8;
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
+        .time-row {
+            display: flex;
+            justify-content: space-between;
             padding: 10px 14px;
-            font-size: 13px;
-            color: #666;
-            margin-bottom: 8px;
+            font-size: 12px;
+            color: #555;
+            border-bottom: 1px solid #e0e0e0;
         }
 
-        .time-slot.selected {
-            background: #e8f5e9;
-            border-color: #2d4a3d;
-            color: #2d4a3d;
-            font-weight: 500;
+        .time-row:last-child {
+            border-bottom: none;
         }
 
         .feature-card img {
@@ -717,32 +763,57 @@
                     </div>
                 </div>
 
-                <!-- Screen 2: Booking Form -->
+                <!-- Screen 2: Booking Form (Clarity-style) -->
                 <div class="anim-screen screen-booking">
-                    <div class="booking-mockup">
-                        <div class="booking-header">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&fit=crop" alt="">
-                            <div>
+                    <div class="clarity-mockup">
+                        <!-- Header bar -->
+                        <div class="clarity-header">Petrus</div>
+                        
+                        <!-- Main content -->
+                        <div class="clarity-content">
+                            <div class="clarity-left">
+                                <!-- Step 1 -->
+                                <div class="clarity-step">
+                                    <span class="step-num">1</span>
+                                    <span class="step-title">Provide Call Information</span>
+                                </div>
+                                
+                                <div class="clarity-form">
+                                    <div class="form-row">
+                                        <span class="form-label">Message to Sarah<br><span class="form-link">Examples</span></span>
+                                        <div class="form-textarea">Please enter a reason for the call</div>
+                                    </div>
+                                    <div class="form-row">
+                                        <span class="form-label">Set Estimated Length</span>
+                                        <div class="form-select">15 minutes ($15.00) <span>▾</span></div>
+                                    </div>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="clarity-step" style="margin-top: 20px;">
+                                    <span class="step-num">2</span>
+                                    <span class="step-title">Suggest Times</span>
+                                </div>
+                                
+                                <div class="clarity-times">
+                                    <div class="time-row">
+                                        <span>Fri, Mar 14 2026</span>
+                                        <span>3:00 PM</span>
+                                    </div>
+                                    <div class="time-row">
+                                        <span>Fri, Mar 14 2026</span>
+                                        <span>3:30 PM</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="clarity-right">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&fit=crop" alt="">
                                 <h4>Sarah Chen</h4>
-                                <p>Hospice Chaplain · Boston</p>
-                                <p class="price">$1/min</p>
+                                <p>Hospice Chaplain, Boston</p>
+                                <p class="clarity-price">$1/min</p>
                             </div>
                         </div>
-                        <div class="booking-field">
-                            <span class="field-label">Message to Sarah</span>
-                            <div class="field-input">Share what's on your mind...</div>
-                        </div>
-                        <div class="booking-field">
-                            <span class="field-label">Call Length</span>
-                            <div class="field-input">15 minutes ($15.00) <span class="chevron">▾</span></div>
-                        </div>
-                        <div class="booking-times">
-                            <p class="times-label">Pick a Time</p>
-                            <div class="time-slot">Today · 3:00 PM</div>
-                            <div class="time-slot">Today · 4:30 PM</div>
-                            <div class="time-slot selected">Tomorrow · 10:00 AM</div>
-                        </div>
-                        <span class="card-label">Book</span>
                     </div>
                 </div>
             </div>
