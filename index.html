@@ -103,6 +103,31 @@
             background: #1d3a2d;
         }
 
+        .profile-menu {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .profile-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(180deg, #4a90a4 0%, #4a90a4 33%, #6ba3b5 33%, #6ba3b5 66%, #c4d4a0 66%, #c4d4a0 100%);
+        }
+
+        .profile-name {
+            font-size: 16px;
+            color: #2d4a3d;
+            font-weight: 500;
+        }
+
+        .profile-arrow {
+            font-size: 12px;
+            color: #666;
+        }
+
         /* Hero */
         .hero {
             background: #faf8f5;
@@ -1147,7 +1172,11 @@
             <input type="text">
         </div>
         <nav class="nav-right">
-            <a href="#guides" class="nav-cta">Find a Teacher</a>
+            <div class="profile-menu">
+                <div class="profile-avatar"></div>
+                <span class="profile-name">Me</span>
+                <span class="profile-arrow">▾</span>
+            </div>
         </nav>
     </header>
 
