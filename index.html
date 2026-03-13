@@ -277,10 +277,58 @@
             gap: 24px;
             padding: 32px 0;
             border-bottom: 1px dashed #e0dcd5;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .guide-row.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .guide-row:last-child {
             border-bottom: none;
+        }
+
+        .guide-photo-container {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .guide-heart {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 32px;
+            height: 32px;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: all 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .guide-heart:hover {
+            transform: scale(1.1);
+            background: white;
+        }
+
+        .guide-heart.liked {
+            color: #e53e3e;
+        }
+
+        .guide-heart.liked::before {
+            content: '❤️';
+        }
+
+        .guide-heart::before {
+            content: '🤍';
         }
 
         .guide-photo {
@@ -502,7 +550,10 @@
         <div class="guide-list">
             <!-- Guide 1 -->
             <div class="guide-row">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=320&h=320&fit=crop" alt="Sarah Chen" class="guide-photo">
+                <div class="guide-photo-container">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=320&h=320&fit=crop" alt="Sarah Chen" class="guide-photo">
+                    <button class="guide-heart" aria-label="Save"></button>
+                </div>
                 <div class="guide-info">
                     <h3 class="guide-title">Grief, Loss, End-of-Life Conversations</h3>
                     <p class="guide-meta"><strong>Sarah Chen</strong> · Hospice Chaplain · Boston, MA</p>
@@ -523,7 +574,10 @@
 
             <!-- Guide 2 -->
             <div class="guide-row">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=320&h=320&fit=crop" alt="Marcus Webb" class="guide-photo">
+                <div class="guide-photo-container">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=320&h=320&fit=crop" alt="Marcus Webb" class="guide-photo">
+                    <button class="guide-heart" aria-label="Save"></button>
+                </div>
                 <div class="guide-info">
                     <h3 class="guide-title">Life Decisions, Ethics, Career Crossroads</h3>
                     <p class="guide-meta"><strong>Marcus Webb</strong> · Philosophical Counselor · New York, NY</p>
@@ -544,7 +598,10 @@
 
             <!-- Guide 3 -->
             <div class="guide-row">
-                <img src="https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=320&h=320&fit=crop" alt="James Okafor" class="guide-photo">
+                <div class="guide-photo-container">
+                    <img src="https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=320&h=320&fit=crop" alt="James Okafor" class="guide-photo">
+                    <button class="guide-heart" aria-label="Save"></button>
+                </div>
                 <div class="guide-info">
                     <h3 class="guide-title">Spiritual Exploration, Interfaith Questions, Finding Your Path</h3>
                     <p class="guide-meta"><strong>James Okafor</strong> · Interfaith Minister · London, UK</p>
@@ -565,7 +622,10 @@
 
             <!-- Guide 4 -->
             <div class="guide-row">
-                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=320&h=320&fit=crop" alt="Elena Vasquez" class="guide-photo">
+                <div class="guide-photo-container">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=320&h=320&fit=crop" alt="Elena Vasquez" class="guide-photo">
+                    <button class="guide-heart" aria-label="Save"></button>
+                </div>
                 <div class="guide-info">
                     <h3 class="guide-title">Anxiety, Overwhelm, Stoic Practices for Daily Life</h3>
                     <p class="guide-meta"><strong>Elena Vasquez</strong> · Stoicism Teacher · Austin, TX</p>
@@ -586,7 +646,10 @@
 
             <!-- Guide 5 -->
             <div class="guide-row">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=320&h=320&fit=crop" alt="David Kim" class="guide-photo">
+                <div class="guide-photo-container">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=320&h=320&fit=crop" alt="David Kim" class="guide-photo">
+                    <button class="guide-heart" aria-label="Save"></button>
+                </div>
                 <div class="guide-info">
                     <h3 class="guide-title">Faith Deconstruction, Religious Trauma, Doubt</h3>
                     <p class="guide-meta"><strong>David Kim</strong> · Pastor · Seattle, WA</p>
@@ -607,7 +670,10 @@
 
             <!-- Guide 6 -->
             <div class="guide-row">
-                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=320&h=320&fit=crop" alt="Tara Mitchell" class="guide-photo">
+                <div class="guide-photo-container">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=320&h=320&fit=crop" alt="Tara Mitchell" class="guide-photo">
+                    <button class="guide-heart" aria-label="Save"></button>
+                </div>
                 <div class="guide-info">
                     <h3 class="guide-title">Meditation, Acceptance, Working with Difficult Emotions</h3>
                     <p class="guide-meta"><strong>Tara Mitchell</strong> · Meditation Teacher · Portland, OR</p>
@@ -638,6 +704,32 @@
             tab.addEventListener('click', function() {
                 document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
                 this.classList.add('active');
+            });
+        });
+
+        // Scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.guide-row').forEach(row => {
+            observer.observe(row);
+        });
+
+        // Heart/save toggle
+        document.querySelectorAll('.guide-heart').forEach(heart => {
+            heart.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.classList.toggle('liked');
             });
         });
     </script>
