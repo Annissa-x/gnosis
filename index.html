@@ -72,45 +72,63 @@
 
         /* Hero */
         .hero {
-            background: linear-gradient(135deg, #3d5a45 0%, #2d4433 100%);
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1600&q=80') center/cover no-repeat;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
             padding: 80px 24px;
-            text-align: center;
             color: white;
         }
 
+        .hero-content {
+            max-width: 650px;
+        }
+
         .hero h1 {
-            font-size: 42px;
+            font-size: 52px;
             font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 24px;
+            line-height: 1.15;
         }
 
         .hero p {
-            font-size: 18px;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto 32px;
-            line-height: 1.7;
+            font-size: 17px;
+            opacity: 0.95;
+            margin-bottom: 36px;
+            line-height: 1.8;
         }
 
         .hero-cta {
             display: inline-block;
-            background: white;
-            color: #3d5a45;
-            padding: 16px 32px;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 16px;
+            background: #4ade80;
+            color: #1a1a1a;
+            padding: 18px 40px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 18px;
             text-decoration: none;
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .hero-cta:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            background: #5eeb92;
+        }
+
+        .hero-secondary {
+            display: inline-block;
+            margin-left: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .hero-secondary:hover {
+            opacity: 1;
+            text-decoration: underline;
         }
 
         /* Section */
@@ -445,9 +463,12 @@
     </header>
 
     <section class="hero">
-        <h1>Therapy helps millions. This is for the rest of us.</h1>
-        <p>Connect with chaplains, philosophers, and guides — physicians of the soul — for conversations about what actually matters.</p>
-        <a href="#guides" class="hero-cta">Browse Guides</a>
+        <div class="hero-content">
+            <h1>Therapy helps millions, but it doesn't help everyone.</h1>
+            <p>Millions live disconnected and without a sense of home — anxiety within, alienation without, and a sense of absurdity with the world. The scientific world gives us tools for innovation, but it cannot tell us how to live. Few of us know where to turn to develop the transformative wisdom necessary to build a meaningful life.</p>
+            <a href="#guides" class="hero-cta">Find Your Guide</a>
+            <a href="#how" class="hero-secondary">Learn More</a>
+        </div>
     </section>
 
     <section class="section how-it-works" id="how">
